@@ -1,0 +1,10 @@
+
+export {default as EditPassword } from './EditPassword'
+export {default as Home } from './Home'
+export {default as EditProfile } from './EditProfile'
+export {default as ImageDetail } from './ImageDetail'
+export {default as InfoUser } from './InfoUser'
+export {default as Login } from './Login'
+export {default as Navbar } from './Navbar'
+export {default as SignUp } from './SignUp'
+export {default as Upload } from './Upload'

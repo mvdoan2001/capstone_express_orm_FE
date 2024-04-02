@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeTemplate from "./template/Hometempate/HomeTemplate";
+import { EditPassword, EditProfile, Home, ImageDetail, InfoUser, Login, Navbar, SignUp, Upload } from "./pages";
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <HomeTemplate>
+            <Navbar />
+            <Home />
+          </HomeTemplate>
+        }
+        />
+        <Route path="/info/:id" element={
+          <HomeTemplate>
+            <Navbar />
+            <InfoUser />
+          </HomeTemplate>
+        }
+        />
+        <Route path='/image/:id' element={
+          <HomeTemplate>
+            <Navbar />
+            <ImageDetail />
+          </HomeTemplate>
+        }
+        />
+        <Route path='/upload' element={
+          <HomeTemplate>
+            <Navbar />
+            <Upload />
+          </HomeTemplate>
+        }
+        />
+
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/info/edit" element={<EditProfile />} />
+        <Route path="/info/edit-pass" element={<EditPassword />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

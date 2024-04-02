@@ -1,13 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+.pin {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 300px; /* Đặt chiều cao cố định cho mỗi pin */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.pin-image {
+  position: relative;
+  height: 50%; /* Đặt chiều cao cho hình ảnh */
 }
+
+.pin-image img {
+  width: 100%;
+  height: 100%; /* Đảm bảo hình ảnh lấp đầy toàn bộ phần container */
+  object-fit: cover; /* Lấp đầy container mà không làm biến dạng hình ảnh */
+  border-radius: 8px 8px 0 0;
+}
+
+.pin-info {
+  padding: 10px;
+  height: 50%; /* Đặt chiều cao cho thông tin của pin */
+  overflow: hidden; /* Ẩn phần dư thừa nếu nội dung quá dài */
+}
+
+.pin-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap; /* Ngăn chặn tiêu đề bị tràn dòng */
+  overflow: hidden; /* Ẩn phần dư thừa của tiêu đề */
+  text-overflow: ellipsis; /* Hiển thị dấu chấm (...) khi tiêu đề bị cắt ngắn */
+}
+
+.pin-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
